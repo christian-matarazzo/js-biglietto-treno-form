@@ -19,7 +19,7 @@ discount = 20
 
 } 
 
-else if (age > 65) {
+else if (age >= 65) {
 
     discount = 40
 
@@ -63,7 +63,50 @@ cancelButton.addEventListener("click", function(){
 userNameEl.value= ""
 userKMEl.value=""
 userAgeEl.value=""
-
+ticketSection.classList.add("d-none");
 finalPriceEl.innerText = "Il suo prezzo finale :"
 })
+
+
+
+/* recreate the "bridge" for the ticket infos */
+const ticketSection = document.getElementById("ticket-result")
+const ticketNameEl = document.getElementById("ticket-name")
+const ticketDiscountEl = document.getElementById("ticket-discount")
+const ticketCarriageEl = document.getElementById("ticket-carriage")
+const ticketPriceEl = document.getElementById("ticket-price")
+
+/* when we click "Genera" the data will be transfered to the "Il tuo biglietto" spans */
+
+generateButton.addEventListener("click", function () {
+    const name = userNameEl.value
+    const age = userAgeEl.value
+    const km = userKMEl.value
+/* condition for the discount */
+    if (km > 0 && age > 0 && name !== "")
+    {
+        const price = calculateTicketPrice(age, km)
+
+        let offerName = "Biglietto standard"
+
+        if (age < 18 )    
+             {offerName = "Biglietto minorenni"}
+
+        else if (age >= 65) 
+            {offerName = "Sconto Silver"}
+    
+        const carriageNumber = Math.floor(Math.random() * 12) + 1;
+        ticketNameEl.innerText = name;
+        ticketDiscountEl.innerText = offerName;
+        ticketCarriageEl.innerText = carriageNumber;
+        ticketPriceEl.innerText = price.toFixed(2);
+        ticketSection.classList.remove("d-none");
+        
+    }
+
+    else {
+        "I campi non sono validi"
+    }
+    
+});
 
