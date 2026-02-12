@@ -1,8 +1,54 @@
-body {
-    background-color: rgba(7, 7, 103, 0.815);
+.ticket-header {
+    background-color: darkblue;
+    padding: 50px;
+    text-align: center;
+    color: white;
 }
 
-h2 {
 
+.ticket-form {
+    text-align: center;
+    padding-top: 50px;
+}
+
+input {
+    display: grid;
+    margin: 10px;
+}
+
+.buttons {
+
+    margin: 50px;
+    
+}
+
+.final-price {
+
+    margin-top: 50px;
+}
+
+
+.ticket-result {
+    background-color: rgb(0, 0, 142);
+    padding: 50px;
+    text-align: center;
     color: white;
+}
+
+.your-ticket {
+     background-color: darkblue;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+.ticket-info {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+
+}
+
+span {
+    display: grid;
 }
