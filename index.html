@@ -1,46 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
+
 <body>
-<head>
-    <h2>Calcola il prezzo del tuo biglietto</h2>
-</head>
-<main>
-    <div class = "ticket-form">
-        <label>Nome e Cognome: 
-            <input type="text" id="user-name-input">
-        </label>
-        <label>KM da percorrere: 
-            <input type="number" id="km-input">
-        </label>
-        <label>Fascia d'età: 
-            <input type ="number" id="user-age">
-        </label>
+    <div class="container py-5">
 
-        <button id="generate-btn" type="button">Genera</button> 
-        <button id="cancel-btn" type="button">Annulla</button>
-        <p id="final-price">Il suo prezzo finale :</p>
-    </div>
-    <section>
-    <div id="ticket-result" class="d-none">
+        <head>
+            <div class="card-header bg-dark text-white text-center py-4 card shadow-lg">
+                <h2>Calcola il prezzo del tuo biglietto</h2>
+            </div>
+        </head>
+        <main>
 
-        <h2>Il tuo biglietto</h2>
+            <div id="ticket-form" class="card p-4 shadow-sm">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="user-name-input" class="form-label fw-bold">Nome e Cognome</label>
+                        <input type="text" id="user-name-input" class="form-control"
+                            placeholder="Inserisci Nome e Cognome">
+                    </div>
 
-        <p><strong>Passeggero: </strong><span id="ticket-name">- - - - - -</span></p>
-        <p><strong>Offerta: </strong><span id = "ticket-discount">- - - - -</span></p>
-        <p><strong>Carrozza: </strong><span id = "ticket-carriage">- - - -</span></p>
-        <p><strong>Costo biglietto: </strong><span id = "ticket-price">- - - -</span></p>
-  </div>
-  </section>
-    </main>
-    
+                    <div class="col-md-4">
+                        <label for="km-input" class="form-label fw-bold">KM da percorrere</label>
+                        <input type="number" id="km-input" class="form-control" placeholder="Inserisci i km">
+                    </div>
 
-    <script src="./main.js"></script>
+                    <div class="col-md-4">
+                        <label for="user-age" class="form-label fw-bold">Età</label>
+                        <input type="number" id="user-age" class="form-control" placeholder="Inserisci l'età">
+                    </div>
+
+                    <div class="col-12 d-flex justify-content-center gap-2 mt-4">
+                        <button id="generate-btn" type="button" class="btn btn-primary px-4">Genera</button>
+                        <button id="cancel-btn" type="button" class="btn btn-outline-secondary px-4">Annulla</button>
+                    </div>
+
+                    <div class="col-12 text-center mt-2">
+                        <p id="final-price" class="text-muted small mb-0">Il suo prezzo finale :</p>
+                    </div>
+                </div>
+            </div>
+            <section class="container mt-5">
+                <div id="ticket-result" class="card shadow-lg d-none">
+                    <div class="card-header bg-dark text-white text-center py-3">
+                        <h2 class="mb-0 text-uppercase h4">Il tuo Biglietto: </h2>
+                    </div>
+
+                    <div class="card-body p-4">
+                        <div class="row g-4 text-center text-md-start">
+
+                            <div class="col-md-3 border-end">
+                                <h6 class="text-muted small text-uppercase">Nome Passeggero: </h6>
+                                <p id="ticket-name" class="fw-bold fs-5 text-dark">----</p>
+                            </div>
+
+                            <div class="col-md-3 border-end">
+                                <h6 class="text-muted small text-uppercase">Offerta: </h6>
+                                <p id="ticket-discount" class="fw-bold fs-5 text-dark">----</p>
+                            </div>
+
+                            <div class="col-md-3 border-end">
+                                <h6 class="text-muted small text-uppercase">Carrozza: </h6>
+                                <p id="ticket-carriage" class="fw-bold fs-5 text-dark">----</p>
+                            </div>
+
+                            <div class="col-md-3">
+                                <h6 class="text-muted small text-uppercase">Prezzo Finale: </h6>
+                                <p id="ticket-price" class="fw-bold fs-4 text-primary">----</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card-footer bg-light text-center py-2">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="./main.js"></script>
 </body>
+
 </html>

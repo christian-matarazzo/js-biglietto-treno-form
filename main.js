@@ -48,7 +48,7 @@ generateButton.addEventListener("click", function () {
     if (km > 0 && age > 0 && name !== "")
     {
         const price = calculateTicketPrice(age, km)
-        finalPriceEl.innerText = `Il suo prezzo finale : ${name} il suo prezzo è di ${price} €`
+        finalPriceEl.innerText = `Il suo prezzo finale : ${price.toFixed(2)} €`
 
     }
 
