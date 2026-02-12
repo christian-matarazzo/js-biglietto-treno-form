@@ -1,3 +1,7 @@
+body {
+    background-color: rgba(203, 200, 196, 0.107);
+}
+
 .ticket-header {
     background-color: darkblue;
     padding: 50px;
@@ -15,10 +19,28 @@ input {
     display: grid;
     margin: 10px;
 }
+button {
+    border-radius: 25px;
+    border: none;
+   
+}
 
+#generate-btn{
+    background-color: darkblue;
+    color: white;
+    padding: 6px;
+    margin-right: 50px;
+}
+
+#cancel-btn{
+    background-color: rgb(64, 64, 86);
+    color: white;
+    padding: 6px;
+}
 .buttons {
 
     margin: 50px;
+    border-radius: 50;
     
 }
 
@@ -52,3 +74,5 @@ input {
 span {
     display: grid;
 }
+
+
