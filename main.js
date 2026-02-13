@@ -32,6 +32,7 @@ return finalPrice
 
 /* create the "bridge" (connect html elements with js with DOM) */
 const userNameEl = document.getElementById("user-name-input")
+const formEl = document.getElementById ("form")
 const userKMEl = document.getElementById ("km-input")
 const userAgeEl = document.getElementById ("user-age")
 const finalPriceEl = document.getElementById ("final-price")
@@ -39,23 +40,14 @@ const generateButton = document.getElementById ("generate-btn")
 const cancelButton = document.getElementById ("cancel-btn")
 
 /* connect the "Genera" button to the JS listener, and use calculate function */
-generateButton.addEventListener("submit", function () {
+formEl.addEventListener("submit", function (e) {
+    
+    e.preventDefault()
 
     const name = userNameEl.value
     const age = Number(userAgeEl.value)
     const km = Number(userKMEl.value)
     
-/* if condition to check if insert element are ok */
-    if (km > 0 && age > 0 && name !== "")
-    {
-        const price = calculateTicketPrice(age, km)
-        finalPriceEl.innerText = `Il suo prezzo finale : ${price.toFixed(2)} €`
-
-    }
-
-    else {
-        finalPriceEl.innerText= `I campi non sono validi!`
-    }
 })
 
 /* add cancel button */
@@ -80,6 +72,8 @@ const ticketPriceEl = document.getElementById("ticket-price")
 /* when we click "Genera" the data will be transfered to the "Il tuo biglietto" spans */
 
 generateButton.addEventListener("click", function () {
+
+
     const name = userNameEl.value
     const age = userAgeEl.value
     const km = userKMEl.value
