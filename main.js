@@ -39,7 +39,8 @@ const generateButton = document.getElementById ("generate-btn")
 const cancelButton = document.getElementById ("cancel-btn")
 
 /* connect the "Genera" button to the JS listener, and use calculate function */
-generateButton.addEventListener("click", function () {
+generateButton.addEventListener("submit", function () {
+
     const name = userNameEl.value
     const age = Number(userAgeEl.value)
     const km = Number(userKMEl.value)

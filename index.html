@@ -13,22 +13,25 @@
 </head>
 <main>
     <div class = "ticket-form">
+        <form action="">
         <div>
         <label>Nome e Cognome: 
             <input type="text" id="user-name-input" placeholder="es. Mario">
         </label>
         <label>KM da percorrere: 
-            <input type="text" id="km-input" placeholder="es. 100">
+            <input type="number" id="km-input" placeholder="es. 100">
         </label>
         <label>Età:  
-            <input type ="text" id="user-age" placeholder="es. 18">
+            <input type ="number" id="user-age" placeholder="es. 18">
         </label>
 
         <div class="buttons">
-        <button id="generate-btn" type="button">Genera</button> 
+        <button id="generate-btn" type="submit">Genera</button> 
         <button id="cancel-btn" type="button">Annulla</button>
         <p id="final-price" class="final-price">Il suo prezzo finale :</p>
         </div>
+    </div>
+</form>
     </div>
     <section>
     <div id="ticket-result" class="d-none">
